@@ -1,0 +1,25 @@
+Lab Question 1: What methods are private?
+
+__row_as_string(self, row)
+
+__three_in_row(self, player, start_x, start_y, dx, dy)
+
+__is_winner(self, player)
+
+
+Lab Question 2: What instance variables does it have?
+
+self.__board
+
+
+Lab Question 3: Write a short description of the internal representation of a board.
+
+Tictactoe_board init:
+
+1. creates an empty list to represent the board
+2. checks if the parameter rows needs to be added to the board or if there are None to add
+3. If None, then it fills the board with lists of 3 single space chars. Number of lists depends on number of rows the board will have (which is a static variable)
+4. Otherwise, an empty row list is created
+5. then it loops through each character of each string in the rows parameter, adding each character individually to the row list
+6. each row list is then appended to the board list
+

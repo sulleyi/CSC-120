@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6f60d07f-d580-4891-9950-2986f3b3d62f" name="Default" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1altZI8N73EWwwXll0LvwhAzfn3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project1" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\CSC120\Lab03 starter code" />
+      <recent name="K:\CSC120\workspace\Lab03 starter code" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.goodmain">
+    <configuration name="badmain" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Sulley_Lab03" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/badmain.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="goodmain" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Sulley_Lab03" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/goodmain.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.goodmain" />
+        <item itemvalue="Python.badmain" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6f60d07f-d580-4891-9950-2986f3b3d62f" name="Default" comment="" />
+      <created>1524711613332</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1524711613332</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="-905" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587323176290">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="414" y="-905" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1587323176290" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1588618948529">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1588618948529" />
+    <state width="1899" height="120" key="GridCell.Tab.0.bottom" timestamp="1587329781191">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="120" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1587329781191" />
+    <state width="1899" height="120" key="GridCell.Tab.0.center" timestamp="1587329781190">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="120" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1587329781190" />
+    <state width="1899" height="120" key="GridCell.Tab.0.left" timestamp="1587329781190">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="120" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1587329781190" />
+    <state width="1899" height="120" key="GridCell.Tab.0.right" timestamp="1587329781190">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="120" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1587329781190" />
+    <state x="461" y="-918" key="SettingsEditor" timestamp="1587322127471">
+      <screen x="0" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="461" y="-918" key="SettingsEditor/0.0.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1587322127471" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588618934234">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/0.-1080.1920.1040@0.0.1536.824" timestamp="1588618934234" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/badmain.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
