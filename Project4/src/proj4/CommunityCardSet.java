@@ -1,6 +1,8 @@
+package proj4;
+
 import java.util.*;
 
-public class CommunityCards{
+public class CommunityCardSet{
 
     private ArrayList<Card> communityCards = new ArrayList<Card>(5);
 
