@@ -1,6 +1,20 @@
-import javax.imageio.plugins.tiff.TIFFImageReadParam;
 import java.util.ArrayList;
 
+/**
+ * Ian Sulley
+ *
+ * Honor Code Statement:
+ * I affirm that I have carried out the attached academic
+ * endeavors with full academic honesty, and in accordance with
+ * the Union College Honor Code and the course syllabus.
+ *
+ *
+ *
+ * Finds the minimum element and the index of the minimum element in a ArrayList of Strings
+ *
+ * Sorts an ArrayList of Strings too! (using selection sort)
+ *
+ */
 public class ListProcessor
 {
     /**
