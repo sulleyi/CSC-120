@@ -8,7 +8,7 @@ public class ListProcessorTester
         Testing.setVerbose(true);
         Testing.startTests();
         getMinTests();
-        //sortTests();
+        sortTests();
         Testing.finishTests();
     }
 
