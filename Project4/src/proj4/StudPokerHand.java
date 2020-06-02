@@ -4,13 +4,14 @@ import java.util.*;
 
 public class StudPokerHand{
 
-    private ArrayList<Card> cardsInHand = new ArrayList<Card>();
+    private ArrayList<Card> cardsInHand;
     private ArrayList<Card> communityCards = new ArrayList<Card>();
 
 
 
     public StudPokerHand(CommunityCardSet cc, ArrayList<Card> cardArrayList){
-        cardsInHand.addAll(cardArrayList);
+
+        cardsInHand = cardArrayList;
     }
 
 
@@ -44,17 +45,24 @@ public class StudPokerHand{
         }
         return allHands;
     }
+
+
+    public int compareTo(StudPokerHand other){
+        PokerHand thisBestHand = this.getBestFiveCardHand();
+        PokerHand otherBestHand = other.getBestFiveCardHand();
+
+        return thisBestHand.compareTo(otherBestHand);
+    }
 }
 
-//I probabably should have read the entire assignment and seen the psuedo-code before I tried to write this recursively
-  /*  private void getAllFiveCardHandsR(ArrayList<Card> comunityCards, PokerHand currentHand, int start) {
+//I probably should have read the entire assignment and seen the psuedo-code before I tried to write this recursively
+  /*  private void getAllFiveCardHandsR(ArrayList<Card> communityCards, PokerHand currentHand, int start) {
 
           for (int i=start; i < communityCards.size() - cardsInHand.size(); i++)
                   {
-                      currentHand.addCardw(comunityCards.get(i);
+                      currentHand.addCard(communityCards.get(i);
                       getAllFiveCardHandsR(communityCards, currentHand, i+1);
                   }
 
           allHands.add(currentHand);
     }*/
-}
