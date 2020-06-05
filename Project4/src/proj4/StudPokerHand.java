@@ -23,8 +23,17 @@ public class StudPokerHand{
         return thisBestHand.compareTo(otherBestHand);
     }
 
-    public String toString{
+    public @Override String toString(){
+        String studString = "The Community Cards are: ";
+        studString += communityCards.toString();
+        studString += "\n The Hole Cards are: ";
 
+        for (Card myCard:cardsInHand) {
+            studString += myCard.toString();
+            studString += " ";
+        }
+
+        return studString;
     }
 
     private PokerHand getBestFiveCardHand() {
