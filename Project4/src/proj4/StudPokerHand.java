@@ -57,7 +57,7 @@ public class StudPokerHand{
         }
 
         for(int i = 0; i < communityCards.size() + cardsInHand.size(); i++) { //these for loops just iterate through every index in the list removing a different combo of two cards
-            for(int j = i +1; j < communityCards.size() + cardsInHand.size() -1; j ++) { //which generates all the unique 5 card hands
+            for(int j = i +1; j < communityCards.size() + cardsInHand.size()  - 1; j ++) { //which generates all the unique 5 card hands
 
                 ArrayList<Card> cloneAllCards = new ArrayList<Card>(allCards); // make a copy of allCards to remove from
                 cloneAllCards.remove(i); //remove 1 card

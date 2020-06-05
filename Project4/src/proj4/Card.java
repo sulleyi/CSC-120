@@ -9,6 +9,18 @@ public class Card {
     private int cardRank;// Rank of the card
     private String cardSuit; //Suit of the card
 
+    /**
+     * Card Object Constructor
+     * @param rank rank of the card
+     * @param suit suit of the card
+     */
+    public Card(int rank, String suit){
+
+        cardRank = rank;
+        cardSuit = suit;
+
+    }
+
     /**  * constructor
      * * @param rank integer between 2-14
      * * @param suit integer: 0=Spades, 1=Hearts, 2=Clubs, or 3=Diamonds

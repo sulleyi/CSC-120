@@ -192,7 +192,7 @@ public class PokerHand {
     private int tieBreaker(ArrayList<Integer> theseRanks, ArrayList<Integer> otherRanks) {
 
         //compare each rank
-        for (int i = 0; i < theseRanks.size(); i++) {
+        for (int i = 0; i < theseRanks.size() &&  i < otherRanks.size(); i++) {
             int currentCompare = theseRanks.get(i).compareTo(otherRanks.get(i)); //compare current index
             if (currentCompare != 0) { //if the current index ranks are different...
                 return currentCompare; //return the comparison
