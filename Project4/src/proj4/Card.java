@@ -66,6 +66,15 @@ public class Card {
         rankMap.put("Twelve", 12);
         rankMap.put("Thirteen", 13);
         rankMap.put("Fourteen", 14);
+        rankMap.put("jack", 11);
+        rankMap.put("queen", 12);
+        rankMap.put("king", 13);
+        rankMap.put("ace", 14);
+        rankMap.put("Jack", 11);
+        rankMap.put("Queen", 12);
+        rankMap.put("King", 13);
+        rankMap.put("Ace", 14);
+
 
         if(rankMap.containsKey(rank)){
             cardRank = rankMap.get(rank);
