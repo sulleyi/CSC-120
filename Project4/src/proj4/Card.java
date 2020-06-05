@@ -28,6 +28,8 @@ public class Card {
             throw new IllegalArgumentException("suit must be represented with an int 0-3");
         }
 
+        cardRank =rank;
+
     }
     /**  * constructor
      *
@@ -47,6 +49,10 @@ public class Card {
         rankMap.put("eight", 8);
         rankMap.put("nine", 9);
         rankMap.put("ten", 10);
+        rankMap.put("eleven", 11);
+        rankMap.put("twelve", 12);
+        rankMap.put("thirteen", 13);
+        rankMap.put("fourteen", 14);
         rankMap.put("Two", 2);
         rankMap.put("Three", 3);
         rankMap.put("Four", 4);
@@ -56,6 +62,10 @@ public class Card {
         rankMap.put("Eight", 8);
         rankMap.put("Nine", 9);
         rankMap.put("Ten", 10);
+        rankMap.put("Eleven", 11);
+        rankMap.put("Twelve", 12);
+        rankMap.put("Thirteen", 13);
+        rankMap.put("Fourteen", 14);
 
         if(rankMap.containsKey(rank)){
             cardRank = rankMap.get(rank);
