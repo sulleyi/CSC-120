@@ -15,26 +15,18 @@ public class Card {
      * */
     public Card(int rank, int suit){
 
-        String stringSuit;
+        Map<Integer, String> suitMap = new HashMap<>();
+        suitMap.put(0, "Spades");
+        suitMap.put(1, "Hearts");
+        suitMap.put(2, "Clubs");
+        suitMap.put(3, "Diamonds");
 
-        cardRank = rank;
-        if(suit == 0){
-           stringSuit = "Spades";
-        }
-        else if(suit == 1){
-            stringSuit = "Hearts";
-        }
-        else if(suit == 2){
-            stringSuit = "Clubs";
-        }
-        else if(suit ==3){
-            stringSuit = "Diamonds";
+        if(suitMap.containsKey(suit)){
+            cardSuit = suitMap.get(suit);
         }
         else{
-            stringSuit = null;
             throw new IllegalArgumentException("suit must be represented with an int 0-3");
         }
-        cardSuit = stringSuit;
 
     }
     /**  * constructor
@@ -55,10 +47,16 @@ public class Card {
         rankMap.put("eight", 8);
         rankMap.put("nine", 9);
         rankMap.put("ten", 10);
-        rankMap.put("eleven", 11);
-        rankMap.put("twelve", 12);
-        rankMap.put("thirteen", 13);
-        rankMap.put("fourteen", 14);
+        rankMap.put("Two", 2);
+        rankMap.put("Three", 3);
+        rankMap.put("Four", 4);
+        rankMap.put("Five", 5);
+        rankMap.put("Six", 6);
+        rankMap.put("Seven", 7);
+        rankMap.put("Eight", 8);
+        rankMap.put("Nine", 9);
+        rankMap.put("Ten", 10);
+
         if(rankMap.containsKey(rank)){
             cardRank = rankMap.get(rank);
         }
@@ -108,7 +106,7 @@ public class Card {
             rankHolder = "Ace";
         }
 
-        String cardString = "[ " + cardRank + " of " + cardSuit + " ]";
+        String cardString = rankHolder + " of " + cardSuit;
         return cardString;
 
     }

@@ -29,16 +29,16 @@ public class Deck {
             for(int j=2; j<=14; j++) {
                 Card card = null;
                 if(i == 0){
-                    card = new Card(j, "Hearts");
+                    card = new Card(j, 0);
                 }
                 if(i == 1){
-                    card = new Card(j,"Diamonds");
+                    card = new Card(j,1);
                 }
                 if(i == 2){
-                    card = new Card(j, "Clubs");
+                    card = new Card(j, 2);
                 }
                 if(i == 3){
-                    card = new Card(j, "Spades");
+                    card = new Card(j, 3);
                 }
                 cardList.add(card);
             }
