@@ -27,7 +27,8 @@ public class Client{
         StudPokerHand myhand = new StudPokerHand(myCCS, StudHand1);
         StudPokerHand otherhand = new StudPokerHand(myCCS, StudHand2);
 
-        myhand.compareTo(otherhand);
+
+        System.out.print(myhand.compareTo(otherhand));
 
 
     }

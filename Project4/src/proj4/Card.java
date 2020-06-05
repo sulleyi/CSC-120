@@ -18,6 +18,11 @@ public class Card {
 
     }
 
+    public Card(String rank, String suit){
+        cardRank = Integer.parseInt(rank);
+        cardSuit = suit;
+    }
+
 
     /**
      * getter for the rank of the card

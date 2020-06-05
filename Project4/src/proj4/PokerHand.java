@@ -7,15 +7,7 @@ public class PokerHand {
     private int MAX_HAND_SIZE = 5;
     private ArrayList<Card> cardsInHand; //all the cards in the hand
 
-    private ArrayList<Integer> allRanks = new ArrayList<Integer>(); //for seperating out the ranks of the cards
-    private ArrayList<String> allSuits = new ArrayList<String>(); //for seperating out the suits
-
-    private ArrayList<Integer> pairRanks = new ArrayList<Integer>(); //for seperating out the pairs
-    private ArrayList<Integer> highcardRanks = new ArrayList<Integer>(); //for seperating out the non-pairs
-
-    private TreeMap<Integer, Integer> rankOccurances = new TreeMap<Integer, Integer>(Collections.reverseOrder());//experimenting with a new data structure, makes sorting fuctions simplier
-
-    /**
+     /**
      * A Constructer for a PokerHand Object
      *
      * @param cardList cards that will make up the PokerHand
@@ -44,7 +36,7 @@ public class PokerHand {
      * @return Card
      */
     public Card get_ith_card(int index) {
-        if (index >= 0 && index < cardsInHand.size() - 1) {
+        if (index >= 0 && index < cardsInHand.size()) {
             return cardsInHand.get(index);
         } else {
             return null;
@@ -75,13 +67,19 @@ public class PokerHand {
      */
     public int compareTo(PokerHand other) {
 
-        //organize the hands and determine their types
-        //this hand
-        this.getHandData();
-        Integer hand1Type = this.handType();
-        //otherhand
-        other.getHandData();
-        Integer hand2Type = other.handType();
+        //organize the hands and determine their types//
+        //THIS hand
+        TreeMap<Integer, Integer> rankOccurances = this.sortRanks();
+        ArrayList<Integer> pairRanks = getRanks(rankOccurances, 1); //for seperating out the pairs
+        ArrayList<Integer> highcardRanks = getRanks(rankOccurances, 0) ; //for seperating out the non-pairs
+        Integer hand1Type = this.handType(pairRanks.size());
+
+        //OTHER hand
+        TreeMap<Integer, Integer> otherRankOccurances = other.sortRanks();
+        ArrayList<Integer> otherPairRanks = getRanks(otherRankOccurances, 1); //for seperating out the pairs
+        ArrayList<Integer> otherHighcardRanks = getRanks(otherRankOccurances, 0) ; //for seperating out the non-pairs
+        Integer hand2Type = other.handType(otherPairRanks.size());
+
 
         int handTypeComparison = hand1Type.compareTo(hand2Type);
 
@@ -91,9 +89,9 @@ public class PokerHand {
 
         else {  //if hands are of the same type...
             if(!pairRanks.isEmpty()){ //if there are pairs to compare...
-                int pairCompare = this.tieBreaker(this.pairRanks, other.pairRanks); //compare them
+                int pairCompare = this.tieBreaker(pairRanks, otherPairRanks); //compare them
                 if(pairCompare == 0){ //if the pair values are equal
-                    return this.tieBreaker(this.highcardRanks, other.highcardRanks); // return the highcard comparison
+                    return this.tieBreaker(highcardRanks, otherHighcardRanks); // return the highcard comparison
                 }
                 else{ //otherwise return the pair comparison
                     return pairCompare;
@@ -101,7 +99,7 @@ public class PokerHand {
 
             }
             else{ //if there are no pairs to compare, just return the highcard comparison
-                return this.tieBreaker(this.highcardRanks, other.highcardRanks);
+                return this.tieBreaker(highcardRanks, otherHighcardRanks);
             }
         }
     }
@@ -111,16 +109,16 @@ public class PokerHand {
      *
      * @return Integer : 4 if flush, 3 if 2pair, 2 if 1pair, 1 if highcard
      */
-    private Integer handType() {
+    private Integer handType(int pairRanksSize) {
 
         boolean isFlush = flushCheck();
         if(isFlush) {
             return 4; //FLUSH
         }
-        if (pairRanks.size() == 2) { // if you have 2 pairs
+        if (pairRanksSize == 2) { // if you have 2 pairs
             return 3; //2Pair
         }
-        if (pairRanks.size() == 1) { //if you have 1 pair
+        if (pairRanksSize == 1) { //if you have 1 pair
             return 2; //1 PAIR
         }
         else { //If its not a flush, 2pair, or 1pair it has to be....
@@ -136,13 +134,13 @@ public class PokerHand {
      * uses the Treemap to fill ArrayLists with pair values, and non-pair(highcard) values
      *
      */
-    private void getHandData(){
+    private TreeMap<Integer, Integer> sortRanks(){
 
-        int size = cardsInHand.size(); //size of the hand
+        ArrayList<Integer> allRanks = new ArrayList<Integer>(); //for seperating out the ranks of the cards
+        TreeMap<Integer, Integer> rankOccurances = new TreeMap<Integer, Integer>(Collections.reverseOrder());//experimenting with a new data structure, makes sorting fuctions simplier
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < cardsInHand.size(); i++) {
             Card currentCard = cardsInHand.get(i);//current card we are pulling data from
-            allSuits.add(currentCard.getCardSuit()); //adding the current cards suit to the suit array
             allRanks.add(currentCard.getCardRank()); //adding the current cards rank to the rank array
         }
 
@@ -151,6 +149,14 @@ public class PokerHand {
             Integer j = rankOccurances.get(i);
             rankOccurances.put(i, (j == null) ? 1 : j + 1);
         }
+        return rankOccurances;
+    }
+
+
+    public ArrayList<Integer> getRanks(TreeMap<Integer, Integer> rankOccurances, int whichRanks){
+
+        ArrayList<Integer> pairRanks = new ArrayList<Integer>(); //for seperating out the pairs
+        ArrayList<Integer> highcardRanks = new ArrayList<Integer>(); //for seperating out the non-pairs
 
         //sort rankOccurances by pairs and non-pairs(highcards)
         for(Integer key : rankOccurances.keySet()){
@@ -165,8 +171,17 @@ public class PokerHand {
                 highcardRanks.add(key);
             }
         }
-    }
 
+        if(whichRanks == 0){
+            return highcardRanks;
+        }
+        if(whichRanks == 1){
+            return pairRanks;
+        }
+        else{
+            return null;
+        }
+    }
     /**
      * compares two ArrayLists of ranks and determines which has the first instance of a greater value
      *
@@ -192,6 +207,13 @@ public class PokerHand {
      * @return true if hand is a flush, false if not
      */
     private boolean flushCheck(){
+
+        ArrayList<String> allSuits = new ArrayList<String>(); //for seperating out the suits
+
+        for (int i = 0; i < cardsInHand.size(); i++) {
+            Card currentCard = cardsInHand.get(i);//current card we are pulling data from
+            allSuits.add(currentCard.getCardSuit()); //adding the current cards suit to the suit array
+        }
 
         //checking for a flush
         String checkSuit = allSuits.get(1);//a suit present in the hand
