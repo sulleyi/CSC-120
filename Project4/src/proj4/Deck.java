@@ -1,5 +1,6 @@
 package proj4; // do not erase. Gradescope expects this.
 
+
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -8,14 +9,18 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class Deck {
 
-    private int DECK_SIZE =52;//standard deck size
-    private ArrayList<Card> cardList = new ArrayList<Card>(DECK_SIZE); //Arraylist of cards
-    private int nextToDeal = 0;//intialized variable of index we are drawing next card from
+    private final int DECK_SIZE = 52;//standard deck size
+    private ArrayList<Card> cardList;//Arraylist of cards
+    private int nextToDeal;//index we are drawing next card from
 
     /**
      * Constructor for a Deck object
      */
     public Deck() {
+
+        nextToDeal = 0;
+        cardList = new ArrayList<Card>(DECK_SIZE);
+
         generateDeck();//generates the deck
     }
 
@@ -25,21 +30,19 @@ public class Deck {
      * suits: Hearts, Diamonds, Spades, Clubs
      */
     private void generateDeck(){
-        for(int i=0; i<4; i++){
-            for(int j=2; j<=14; j++) {
-                Card card = null;
-                if(i == 0){
-                    card = new Card(j, 0);
-                }
-                if(i == 1){
-                    card = new Card(j,1);
-                }
-                if(i == 2){
-                    card = new Card(j, 2);
-                }
-                if(i == 3){
-                    card = new Card(j, 3);
-                }
+
+
+        Map<Integer, String> suitMap = new HashMap<>();
+        suitMap.put(0, "Spades");
+        suitMap.put(1, "Hearts");
+        suitMap.put(2, "Clubs");
+        suitMap.put(3, "Diamonds");
+
+        int[] ranks = new int[] {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+
+        for(Integer key: suitMap.keySet()){
+            for(int j : ranks) {
+                Card card = new Card(j, key);
                 cardList.add(card);
             }
         }
@@ -110,6 +113,19 @@ public class Deck {
             str += "\n";
         }
         return str;
+    }
+
+    /**
+     * determines if there are cards left in the deck or not
+     * @return boolean. True if no more cards, false otherwise
+     */
+    public boolean isEmpty(){
+        if(nextToDeal == DECK_SIZE){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
 }

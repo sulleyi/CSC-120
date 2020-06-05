@@ -4,7 +4,7 @@ import java.util.*;
 
 public class PokerHand {
 
-    private int MAX_HAND_SIZE = 5;
+    private static final int MAX_HAND_SIZE = 5;
     private ArrayList<Card> cardsInHand; //all the cards in the hand
 
      /**
@@ -128,11 +128,8 @@ public class PokerHand {
     }
 
     /**
-     * Breaks up all the hand data into managable chunks:
-     * seperates suits and ranks into their own ArrayLists,
-     * creates a Treemap of the ranks and their # of occurances,
-     * uses the Treemap to fill ArrayLists with pair values, and non-pair(highcard) values
-     *
+     * creates a Treemap of the ranks and their # of occurances
+     * @return Treemap<Integer, Integer>
      */
     private TreeMap<Integer, Integer> sortRanks(){
 
@@ -153,6 +150,12 @@ public class PokerHand {
     }
 
 
+    /**
+     * sorts all the ranks into pairs and non pairs from the treemap
+     * @param rankOccurances treemap of ranks present and the # of occurances of each
+     * @param whichRanks if we are sorting pairs (1) or non-pairs(0)
+     * @return
+     */
     public ArrayList<Integer> getRanks(TreeMap<Integer, Integer> rankOccurances, int whichRanks){
 
         ArrayList<Integer> pairRanks = new ArrayList<Integer>(); //for seperating out the pairs
